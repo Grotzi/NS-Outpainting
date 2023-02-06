@@ -5,7 +5,8 @@ import numpy as np
 from PIL import Image
 import tensorflow as tf
 from tensorflow.python.training.moving_averages import assign_moving_average
-import tensorflow.contrib.layers as ly
+#import tensorflow.contrib.layers as ly
+import tensorflow.keras.layers as ly
 from modeling.model import Model
 from modeling.loss import Loss
 from dataset.parse import parse_trainset, parse_testset
@@ -102,9 +103,10 @@ args.batch_size_per_gpu = int(args.batch_size / args.num_gpu)
 model = Model(args)
 loss = Loss(args)
 
-config = tf.ConfigProto(allow_soft_placement=True)
+config = tf.compat.v1.ConfigProto(allow_soft_placement=True)
 config.gpu_options.allow_growth = True
-config.graph_options.optimizer_options.global_jit_level = tf.OptimizerOptions.ON_1
+#config.graph_options.optimizer_options.global_jit_level = tf.OptimizerOptions.ON_1
+config.graph_options.optimizer_options.global_jit_level = tf.compat.v1.OptimizerOptions.ON_1
 
 print("Start building model...")
 with tf.Session(config=config) as sess:

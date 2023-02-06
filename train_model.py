@@ -5,7 +5,8 @@ import numpy as np
 from PIL import Image
 import tensorflow as tf
 from tensorflow.python.training.moving_averages import assign_moving_average
-import tensorflow.contrib.layers as ly
+#import tensorflow.contrib.layers as ly
+import tensorflow.keras.layers as ly
 from modeling.model import Model
 from modeling.loss import Loss
 from dataset.parse import parse_trainset, parse_testset

@@ -1,4 +1,5 @@
-import tensorflow as tf
+#import tensorflow.contrib.layers as ly
+import tensorflow.keras.layers as ly
 import numpy as np
 import math
 

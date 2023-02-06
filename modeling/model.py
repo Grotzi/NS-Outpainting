@@ -1,5 +1,6 @@
 import tensorflow as tf
-import tensorflow.contrib.layers as ly
+#import tensorflow.contrib.layers as ly
+import tensorflow.keras.layers as ly
 
 
 class Model():
